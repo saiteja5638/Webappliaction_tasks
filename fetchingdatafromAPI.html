@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>Info data</title>
+</head>
+<style>
+
+img{
+	width:70px;
+	height:70px;
+  fit-position:cover;
+	border-radius:10px;
+}
+table{
+	background-color:white;
+	color:black;
+     
+	background-repeat:none;
+	background-size:cover;
+	border-color:rgba(168, 210, 228, 0.8);
+
+}
+th{
+	background-color:rgba(168, 210, 228, 0.8);
+  border-color:rgba(168, 210, 228, 0.8);
+}
+body{
+	font-family: sans-serif;
+}
+div{
+   width:80%;
+   height:700px;
+position:relative;
+left:200px;
+top:100px;
+}
+</style>
+
+<body>
+
+
+<h1  align="center" >  Store Data Fetched from API</h1>
+
+<div>
+<table border  cellspacing="0"  cellpadding="5px" >
+
+<thead>
+	<tr>
+		<th>S/no</th>
+		<th>Product category</th>
+		<th>Product Description</th>
+		<th>Product Price</th>
+		<th>Product image</th>
+	</tr>
+</thead>
+<tbody  id="tbody1">
+	
+	
+</tbody>
+
+</table>
+</div>
+</body>
+</html>
+
+<script>
+
+fetch('https://fakestoreapi.com/products')
+
+.then((Data1)=>{
+  return Data1.json();
+})
+.then((ObjectData)=>
+{
+  console.log(ObjectData)
+	
+	let tableData =""
+	
+	ObjectData.map((values)=>{
+	  tableData+=`
+		<tr>
+		<td>${values.id}</td>
+		<td>${values.category}</td>
+		
+		<td>${values.description}</td>
+		<td>${values.price}</td>
+		
+		<td> <img src="${values.image}" ></td>
+		
+		</tr>
+		
+		`
+	})
+	
+	document.getElementById('tbody1').innerHTML=tableData;
+	
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<html>
+
+<head>
+<title>S ATM services</title>
+</head>
+
+<style>
+body{
+margin:0;
+}
+.Main_container{
+  width:100%;
+	height:950px;
+	background-color:white;
+	border:1px solid black;
+	background-color: #330000;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23D18'/%3E%3Cstop offset='1' stop-color='%23330000'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23FA3' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23FA3' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+}
+.ATM_Container_user_input{
+	width:450px;
+	height:450px;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23D18'/%3E%3Cstop offset='1' stop-color='%23330000'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23FA3' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23FA3' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+	position:relative;
+	  margin: auto;
+	top:250px;
+	
+	border:1px solid black;
+	border-radius:10px;
+	border-color:white;
+}
+form{
+	display:flex;
+	flex-direction:column;
+	gap:12px;
+	color:white;
+}
+input{
+	width:350px;
+	height:30px;
+	padding:5px;
+	 box-sizing: border-box;
+	color:black;
+
+ border: 0;
+ 
+  background: transparent;
+  border-bottom: 1px solid white;
+	
+	border-radius:0px;
+}
+button{
+		width:350px;
+	height:34px;
+	padding:5px;
+	 background: transparent;
+	border-radius:10px;
+
+	outline:none;
+	 border:1px solid white;
+}
+input,label,button,h1{
+	position:relative;
+	left:30px;
+   
+	font-family: Segoe UI;
+
+	outline:none;
+
+}
+h1::first-letter{
+	color:red;
+	font-size:45px;
+	letter-spacing:2px;
+}
+h1{
+		letter-spacing:1px;
+}
+::placeholder{
+	color:whitesmoke;
+}
+
+
+</style>
+
+<body>
+
+<div class="Main_container" >
+<div class="ATM_Container_user_input " >
+<form>
+<h1>
+Enter Your Credientials
+</h1>
+<label> Enter the Debit card number</label>
+<input type="number" placeholder=" Debit card number" id="debit_card" >
+<label >Enter the Pin</label>
+<input type="password" placeholder=" Pin" id="pin" >
+<button type="button" id="submit">Submit</button>
+<button type="button" id="reset">Reset</button>
+</form>
+
+</div>
+
+</div>
+
+<script>
+
+const d_number = document.getElementById('debit_card')
+
+const p_number = document.getElementById('pin')
+
+const submit = document.getElementById('submit')
+
+const reset = document.getElementById('reset')
+
+
+submit.addEventListener('click', Subm)
+
+reset.addEventListener('click',rest)
+
+function Subm()
+{
+ if(d_number.value==""||d_number.value.length<=8)
+ {
+  d_number.style.borderBottom="2px solid red";
+	d_number.value=""
+ }
+ else
+ {
+   d_number.style.borderBottom="2px solid green";
+ }
+ if(p_number.value==""||p_number.value.length>6||p_number.value.isNaN)
+ {
+  p_number.style.borderBottom="2px solid red";
+	p_number.value=""
+ }
+ else{
+ if(isNaN(p_number))
+ {
+  p_number.style.borderBottom="2px solid green";
+ }
+ else{
+  p_number.style.borderBottom="2px solid red";
+	p_number.value="";
+ }
+ }
+}
+
+function rest()
+{
+  	d_number.value="";
+			p_number.value="";
+
+d_number.style.borderBottom="2px solid white";
+p_number.style.borderBottom="2px solid white";		
+}
+
+</script>
+
+</body>
+</html>

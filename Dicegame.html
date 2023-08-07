@@ -1,0 +1,182 @@
+<html>
+<head>
+<title>Dice Game</title>
+</head>
+
+<style>
+
+body{
+background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='1' y2='0' gradientTransform='rotate(87,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%230FF'/%3E%3Cstop offset='1' stop-color='%23CF6'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(183,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23F00'/%3E%3Cstop offset='1' stop-color='%23FC0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23FFF' fill-opacity='0' stroke-miterlimit='10'%3E%3Cg stroke='url(%23a)' stroke-width='32.34'%3E%3Cpath transform='translate(-124.25 3.1999999999999993) rotate(-4.75 1409 581) scale(0.9108449999999999)' d='M1409 581 1450.35 511 1490 581z'/%3E%3Ccircle stroke-width='10.780000000000001' transform='translate(-165.5 98) rotate(6.9 800 450) scale(1.004406)' cx='500' cy='100' r='40'/%3E%3Cpath transform='translate(16.200000000000003 -91.5) rotate(46.5 401 736) scale(1.004406)' d='M400.86 735.5h-83.73c0-23.12 18.74-41.87 41.87-41.87S400.86 712.38 400.86 735.5z'/%3E%3C/g%3E%3Cg stroke='url(%23b)' stroke-width='9.8'%3E%3Cpath transform='translate(588 5.800000000000001) rotate(-1.4500000000000002 150 345) scale(0.9896149999999999)' d='M149.8 345.2 118.4 389.8 149.8 434.4 181.2 389.8z'/%3E%3Crect stroke-width='21.560000000000002' transform='translate(-144.5 -267.5) rotate(28.80000000000001 1089 759)' x='1039' y='709' width='100' height='100'/%3E%3Cpath transform='translate(-336 88) rotate(4.800000000000001 1400 132) scale(0.775)' d='M1426.8 132.4 1405.7 168.8 1363.7 168.8 1342.7 132.4 1363.7 96 1405.7 96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+}
+.Main_container{
+	width:800px;
+	height:500px;
+	background:transparent;
+		border:2px solid black;
+
+margin:auto;
+position:relative;
+top:250px;
+border-radius:5px;
+
+
+}
+
+ .dice1{
+	width:200px;
+	height:200px;
+
+	position:relative;
+	top:80px;
+	left:40px;
+
+}
+.dice2{
+		width:250px;
+	height:200px;
+	
+	position:relative;
+	left:540px;
+	
+	bottom:280px;
+}
+.dice_image1{
+	width:200px;
+	height:200px;
+
+} 
+
+.dice_image2
+{
+	width:200px;
+	height:200px;
+	
+} 
+
+button{
+	width:250px;
+	height:45px;
+	background:transparent;
+	color:black;
+	position:relative;
+	left:250px;
+	bottom:200px;
+     border-radius:5px;
+     border:1px solid black;
+     outline:none;
+}
+
+</style>
+<body>
+<div class="Main_container" >
+
+<h1 align=center id="logo" >
+Dice Game
+</h1>
+<div class="Sub_container" >
+
+<div  class="dice1" >
+  <h1 id="player1n" >
+	    Player1
+	</h1>
+  <div class="dice_image1" id="dice_image1" > 
+	<img  src="https://cdn2.iconfinder.com/data/icons/dice-roll/100/dice_6-512.png" width="200px" height="200px" id="dice12" >
+	</div>
+	<div  class="dice2" >
+  <h1 id="player2n" >
+	    Player2
+	</h1>
+  <div class="dice_image2" id="dice_image2" > 
+	<img  src="https://cdn2.iconfinder.com/data/icons/dice-roll/100/dice_6-512.png" width="200px" height="200px" id="dice21" >
+	</div>
+
+</div>
+
+
+<div class="User_buttons" >
+
+<button type="button" id="ROll" >
+Play
+</button>
+
+</div>
+
+</div>
+</div>
+</div>
+<script>
+
+
+const dice1  = document.getElementById("dice12")
+
+const dice2  = document.getElementById("dice21")
+
+const play =document.getElementById("ROll")
+
+var images =[
+
+    "https://webstockreview.net/images/dice-clipart-double-4.png",
+		
+		"https://webstockreview.net/images/dice-clipart-2-dot-4.png",
+		
+		"https://th.bing.com/th/id/R.877a6688cdc5f2cdd2ee845eb35451d0?rik=PZe8AE6M4dgZpA&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fniX%2fpKa%2fniXpKan6T.png&ehk=857pev9kJKQxS5pOZJMSgaD908I4hXzp961VAw6jdi0%3d&risl=&pid=ImgRaw&r=0",
+		
+		"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Dice-4-b.svg/1024px-Dice-4-b.svg.png",
+		
+		"https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Dice-5-b.svg/768px-Dice-5-b.svg.png",
+		
+		"https://clipground.com/images/dice-clipart-1-6-1.png"
+		
+]
+
+play.addEventListener('click', play1)
+
+function play1()
+{
+  
+
+	
+	
+	
+ let player1 = Math.floor(Math.random()*6)
+ 
+ console.log(player1)
+ 
+  let player2 = Math.floor(Math.random()*6)
+ 
+ console.log(player2)
+ 
+
+  dice1.src=images[player1]
+	
+	 dice2.src=images[player2]
+	 
+	 
+	 if(player1>player2)
+	 {
+	  document.getElementById("logo").innerText=" Player 1  Won the match"	
+		}
+		
+		
+   else
+	 {
+	   if(player1==player2)
+		 {
+		 document.getElementById("logo").innerText="Both the player are at draw"
+		 }
+		 else {
+	  document.getElementById("logo").innerText="Player2  Won the match"
+		}
+	 }
+ 
+  
+
+
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<html>
+<head><title>Typing master </title></head>
+
+<style>
+.main_content{
+	width:600px;
+	height:500px;
+	background-color:azure;
+	border:1px solid black;
+	border-radius:25px;
+}
+input{
+	width:500px;
+	height:45px;
+	padding:10px;
+	border-radius:25px;
+	margin:10px;
+	 margin-left:20px;
+	 font-size:16px;
+	
+}
+.keypad{
+	width:600px;
+	height:260px;
+	border:1px solid black;
+	background-color:white;
+	border-radius:10px;
+	font-size:26px;
+	
+}
+button{
+	width:250px;
+	height:40px;
+	background-color:blue;
+	border-radius:15px;
+	color:white;
+	position:relative;
+	left:190px;
+	top:6px;
+}
+.counter1{
+	height:100px;
+	width:600px;
+	background-color:none;
+	font-size:20px;
+	padding:40px;
+}
+button:hover{
+	background-color:white;
+	color:blue;
+	transition:0.5s;
+	border-color:blue;
+}
+#co{
+	width:600px;
+	height:250px;
+	background-color:white;
+	color:red;
+	border:1px solid black;
+}
+
+
+</style>
+
+<body>
+
+<div class="main_content">
+<div class="display" >
+
+
+<input id="text1" type="text" onkeypress="fun(event)"  placeholder="Start Typing ...."   >
+
+</div>
+<div class="keypad"   id="review" >
+
+</div>
+<button type="button"  id="clear"   >
+Clear
+</button>
+<br>
+
+<div  id="counter" class="counter1"  >
+
+</div>
+<div  id="co" >
+
+</div>
+</div>
+
+
+<script>
+
+var newStr
+
+var str
+
+var i=0;
+
+var speed =100;
+
+
+function fun(e)
+{
+  let key 
+	
+	
+	 if(window.event)
+	 {
+	  key = e.keyCode;
+		
+		console.log(key)
+	 }
+	 else if(e.which)
+	 {
+	   key = e.which ;
+		 console.log(key)
+	 }
+	 
+	 str = document.getElementById('review').innerHTML
+	 str+=String.fromCharCode(key)
+	 
+	 document.getElementById('review').innerHTML=str;
+	 	 
+	 
+}
+
+
+	 
+	 let clr1 = document.getElementById('clear')
+
+
+clr1.addEventListener('click', clr)
+	 
+	 function clr()
+{
+
+   review.innerHTML="" 
+	
+	 document.getElementById('text1').value=""
+	 
+	 document.getElementById('counter').innerHTML="You have typed "+str.length+"  letters in text area"
+
+
+ if(i<str.length)
+ {
+    document.getElementById('co').innerHTML+=str.charAt(i);
+	 i++;
+	 
+	 setTimeout(clr,speed)
+ }
+ 
+}
+
+
+
+
+</script>
+
+</body>
+</html>

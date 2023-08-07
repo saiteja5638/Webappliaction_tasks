@@ -1,0 +1,117 @@
+<html>
+<head><title>Calculator</title>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+
+<style>
+
+.calculator{
+	width:350px;
+	height:280px;
+	background-color:azure;
+	border:1px solid black;
+	border-radius:5px;
+	
+}
+.display{
+	width:450px;
+height:70px;
+	color:black;
+	border-radius:15px;
+/* 	background-color:white;
+	border:1px solid black; */
+}
+.keypad{
+	width:350px;
+	height:200px;
+	
+}
+input{
+	width:300px;
+	margin:10px;
+	padding:10px;
+	height:20px;
+		border-radius:15px;
+}
+.keypad{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-evenly;
+	column-gap:8px;
+	 
+	
+	
+}
+button{
+	width:50px;
+	height:40px;
+	background-color:blue;
+	color:white;
+	border-radius:10px;
+}
+</style>
+<body>
+<div  class="calculator" >
+
+<div class="display" >
+
+<input type="text"  placeholder="Calculator"  id="dis1" >
+
+</div>
+
+<div class="keypad">
+
+
+
+<button  type="button"  onclick="show(1)">1</button>
+<button  type="button"  onclick="show(2)">2</button>
+<button  type="button"  onclick="show(3)">3</button>
+<button  type="button"  onclick="show(4)">4</button>
+<button  type="button"  onclick="show(5)">5</button>
+<button  type="button"  onclick="show(6)">6</button>
+<button  type="button"  onclick="show(7)">7</button>
+<button  type="button"  onclick="show(8)">8</button>
+<button  type="button"  onclick="show(9)">9</button>
+<button  type="button"  onclick="show(0)">0</button>
+<button  type="button"  onclick="show('+')">+</button>
+<button  type="button"  onclick="clr()">clr</button>
+
+<button  type="button"  onclick="show('/')">/</button>
+<button  type="button"  onclick="show('*')">*</button>
+<button  type="button"  onclick="show('-')">-</button>
+<button  type="button"  onclick="res()">=</button>
+
+</div>
+
+</div>
+
+<script>
+let dis = document.getElementById('dis1')
+
+function show(val)
+{
+ dis.value+=val;
+}
+
+function res()
+{
+ let eqq = eval(dis.value)
+ 
+ dis.value=eqq;
+}
+
+function clr()
+{
+ dis.value=""
+}
+
+
+
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+<html>
+	<head> 
+		<title>Search Box </title>
+	</head>
+         
+
+           <style>
+
+            .Main_container
+{
+   
+
+     background-color: #330000;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23D18'/%3E%3Cstop offset='1' stop-color='%23330000'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23FA3' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23FA3' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.5'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+	width:100%;
+	height:1000px;
+	
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.Products_container{
+	width:500px;
+	height:600px;
+	background-color:transparent;
+	backdrop-filter:blur(20px);
+  border-radius:15px;
+   overflow-y: scroll;
+	border:1px solid white;
+	
+}
+input{
+	width:350px;
+	height:40px;
+	padding:10px;
+	position:relative;
+	left:60px;
+	top:25px;
+	border:0;
+caret-color: green;
+	outline-color:green;
+	 border-radius:15px;
+	
+}
+img{
+	height:70px;
+	width:70px;
+	cover-fit:cover;
+	border-radius:15px;
+	margin-top:15px;
+	margin-left:15px;
+}
+.product{
+	width:350px;
+	height:90px;
+	background-color:white;
+  display:flex;
+	gap:40px;
+
+	 border-radius:15px;
+	position:relative;
+	top:30px;
+	left:60px;
+	margin:8px;
+}
+             </style>
+	<body>
+		<div class="Main_container" >
+
+
+              <div class="head" >
+                 
+               </div>   
+			
+			 <div class="Products_container">
+				 			<input type="text"  placeholder="Enter the Question " id="Search_item"  required  onkeyup="searchprod()" > 
+			   <div class="product"  id="product" >
+				 <img src="https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&w=1600" >
+					 <div  class="p_name">
+					 <h2>Apple</h2>
+						 <h3>35rs</h3>
+					 </div>
+				 </div>
+				  <div class="product" >
+				 <img src="https://images.pexels.com/photos/2875814/pexels-photo-2875814.jpeg?auto=compress&cs=tinysrgb&w=1600" >
+					 <div  class="p_name">
+					 <h2>Banana</h2>
+						 <h3>45rs</h3>
+					 </div>
+				 </div>
+				  <div class="product" >
+				 <img src="https://images.pexels.com/photos/109274/pexels-photo-109274.jpeg?auto=compress&cs=tinysrgb&w=1600" >
+					 <div  class="p_name">
+					 <h2>Cherry</h2>
+						 <h3>55rs</h3>
+					 </div>
+				 </div>
+				  <div class="product" >
+				 <img src="https://images.pexels.com/photos/5945921/pexels-photo-5945921.jpeg?auto=compress&cs=tinysrgb&w=1600" >
+					 <div  class="p_name">
+					 <h2>Dragon Fruit</h2>
+						 <h3>65rs</h3>
+					 </div>
+				 </div>
+				  <div class="product" >
+				 <img src="https://images.pexels.com/photos/5273010/pexels-photo-5273010.jpeg?auto=compress&cs=tinysrgb&w=1600" >
+					 <div  class="p_name">
+					 <h2>Elder berry</h2>
+						 <h3>35rs</h3>
+					 </div>
+				 </div>
+				  <div class="product" >
+				 <img src="https://images.pexels.com/photos/5638268/pexels-photo-5638268.jpeg?auto=compress&cs=tinysrgb&w=1600" >
+					 <div  class="p_name">
+					 <h2>Fig</h2>
+						 <h3>15rs</h3>
+					 </div>
+				 </div>
+				  <div class="product" >
+				 <img src="https://images.pexels.com/photos/5945850/pexels-photo-5945850.jpeg?auto=compress&cs=tinysrgb&w=1600" >
+					 <div  class="p_name">
+					 <h2>Grapes</h2>
+						 <h3>135rs</h3>
+					 </div>
+				 </div>
+				  <div class="product" >
+				 <img src="https://images.pexels.com/photos/4772947/pexels-photo-4772947.jpeg?auto=compress&cs=tinysrgb&w=1600" >
+					 <div  class="p_name">
+					 <h2>Honeydew</h2>
+						 <h3>75rs</h3>
+					 </div>
+				 </div>
+				  <div class="product" >
+				 <img src="https://www.liveeatlearn.com/wp-content/uploads/2022/06/jujube-fruit-650x298.jpg" >
+					 <div  class="p_name">
+					 <h2>Indian Jujube Fruit</h2>
+						 <h3>65rs</h3>
+					 </div>
+				 </div>
+				  <div class="product" >
+				 <img src="https://healthiersteps.com/wp-content/uploads/2021/06/Jackfruit-fruit.jpg" >
+					 <div  class="p_name">
+					 <h2> JACKFRUIT</h2>
+						 <h3>35rs</h3>
+					 </div>
+				 </div>
+				  <div class="product" >
+				 <img src="data:image/jpeg;base64,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" >
+					 <div  class="p_name">
+					 <h2>Hardy Kiwi</h2>
+						 <h3>105rs</h3>
+					 </div>
+				 </div>
+				  <div class="product" >
+				 <img src="https://insanelygoodrecipes.com/wp-content/uploads/2021/05/Kaffir-Limes-683x1024.webp" >
+					 <div  class="p_name">
+					 <h2>Kaffir Lime</h2>
+						 <h3>35rs</h3>
+					 </div>
+				 </div>
+				  <div class="product" >
+				 <img src="https://www.wcrf-uk.org/wp-content/webp-express/webp-images/uploads/2021/06/Lemon_A-Z-Fruit14-100x100.jpg.webp" >
+					 <div  class="p_name">
+					 <h2>Lemons</h2>
+						 <h3>35rs</h3>
+					 </div>
+				 </div>
+				  <div class="product" >
+				 <img src="https://www.wcrf-uk.org/wp-content/webp-express/webp-images/uploads/2021/06/Mango_A-Z-Fruit15-100x100.jpg.webp" >
+					 <div  class="p_name">
+					 <h2>Mangoes</h2>
+						 <h3>35rs</h3>
+					 </div>
+				 </div>
+				  <div class="product" >
+				 <img src="https://www.wcrf-uk.org/wp-content/webp-express/webp-images/uploads/2021/06/Nectarine_A-Z-Fruit17-100x100.jpg.webp" >
+					 <div  class="p_name">
+					 <h2>Nectarines</h2>
+						 <h3>85rs</h3>
+					 </div>
+				 </div>
+				  <div class="product" >
+				 <img src="https://www.wcrf-uk.org/wp-content/webp-express/webp-images/uploads/2021/06/Olive_A-Z-Fruit18-100x100.jpg.webp" >
+					 <div  class="p_name">
+					 <h2>Olives</h2>
+						 <h3>35rs</h3>
+					 </div>
+				 </div>
+			</div>
+			
+		</div>
+      <script>
+
+const Search_input = document.getElementById("Search_item")
+
+let timer;
+let secs=500;
+console.log(Search_input)
+
+
+function searchprod()
+{
+	let product = document.querySelectorAll('.product')
+	let products = document.getElementById('products')
+	let p_name = document.getElementsByTagName('h2')
+	
+	for(var i=0;i<p_name.length;i++)
+      {
+
+       let match = product[i].getElementsByTagName('h2')[0]
+
+	let text = match.innerHTML||match.textContent;
+					
+	if(text.toUpperCase().indexOf(Search_input.value.toUpperCase())>-1)
+	{
+	   product[i].style.display= " ";
+	}
+	else
+      {
+	 product[i].style.display="none";
+	}
+     if(Search_input.value.length<=2)
+{
+   product[i].style.display="";
+ 
+}
+
+				
+		}
+	
+}
+
+
+
+      </script>
+
+	</body>

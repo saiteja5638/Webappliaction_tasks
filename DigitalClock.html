@@ -1,0 +1,163 @@
+<html>
+<head>
+<title>Clock</title>
+</head>
+<style>
+
+body{
+	font-family: sans-serif;
+     margin:0;
+    padding:0;
+}
+
+.Main_container{
+	width:100%;
+	height:1000px;
+	border:1px solid black;
+      margin-top:-50px;
+	display:flex;
+	flex-direction:row;
+	gap:40px;
+	align-items:center;
+	justify-content:center;
+	background-image:url('https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+	background-repeat:none;
+	background-size:cover;
+	
+}
+.hours{
+	width:300px;
+	height:300px;
+	border-radius:50%;
+	border:4px solid red;
+      	backdrop-filter:blur(20px)
+
+}
+.mins{
+	width:300px;
+	height:300px;
+	border-radius:50%;
+	border:4px solid yellow;
+		backdrop-filter:blur(20px)
+}
+.secs{
+	width:300px;
+	height:300px;
+	border-radius:50%;
+	border:4px solid green;
+		backdrop-filter:blur(20px)
+}
+.ampm{
+	width:300px;
+	height:300px;
+	border-radius:50%;
+	border:4px solid blue;
+		backdrop-filter:blur(20px)
+}
+p{
+	font-size:55px;
+	text-align:center;
+	position:relative;
+	top:60px;
+	font-weight:800;
+}
+h1{
+	position:relative;
+	top:100px;
+	color:white;
+	font-weight:200;
+	height:0;
+      letter-spacing:3px; 
+      word-spacing:5px;
+}
+h1::first-letter{
+	color:red;
+	font-size:45px;
+}
+u{
+ width:250px;
+ margin-top:5px;
+}
+
+</style>
+
+<body>
+<h1 align="center" ><u>
+Indian Standard Time </u>
+</h1>
+<div class="Main_container" >
+
+
+
+<div class="hours"   >
+<p  id="hours" >
+
+</p>
+</div>
+
+<div class="mins"   >
+<p  id="mins" >
+
+</p>
+</div>
+
+<div class="secs"  >
+<p  id="secs"  >
+
+</p>
+</div>
+
+<div class="ampm" >
+<p  id="ampm"   >
+
+</p>
+</div>
+
+</div>
+<script>
+setInterval(()=>{
+
+
+const hrs = document.getElementById('hours')
+
+const mns = document.getElementById('mins')
+
+const secs = document.getElementById('secs')
+
+const ampm = document.getElementById('ampm')
+
+
+let h = new Date().getHours();
+
+let m = new Date().getMinutes();
+
+let s = new Date().getSeconds();
+
+let am = (h>=12)?'PM':'AM';
+  
+if(h>12)
+{
+  h=h-12;
+}
+
+h=(h<10)?'0'+h:h;
+
+m=(m<10)?'0'+m:m;
+
+s=(s<10)?'0'+s:s;
+
+
+hrs.innerHTML=h;
+
+mns.innerHTML=m;
+
+secs.innerHTML=s
+
+ampm.innerHTML=am
+
+})
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<html>
+<head>
+
+<title>BMI CALCULATOR</title>
+</head>
+<style>
+
+.BMI_Main_Container{
+	width:100%;
+	height:700px;
+	background-color:#0d4857;
+	 border-radius:25px;
+	 animation:mymove;
+}
+.Input_container
+{
+  width:450px;
+	height:350px;
+	background-color:whitesmoke;
+	margin:25px;
+ position:relative;
+ top:50px;
+ border:2px solid black;
+ border-radius:15px;
+}
+form{
+		display:flex;
+	flex-direction:column;
+	gap:8px;
+   padding:10px;
+	position:relative;
+	left:45px;
+	top:15px;
+	
+}
+input{
+	width:300px;
+	height:30px;
+	 border-radius:15px;
+	
+}
+button{
+	width:300px;
+	height:30px;
+	margin:5px;
+	 border-radius:15px;
+	 background-color:azure;
+	 border-color:azure;
+}
+.display{
+	width:450px;
+	height:100px;
+	background-color:white;
+	position:relative;
+	top:45px;
+	left:25px;
+	border:1px solid black;
+	border-radius:10px;
+
+
+	 
+}
+.meterline{
+	position:relative;
+	top:50px;
+	width:200px;
+	height:200px;
+}
+marquee{
+	position:relative;
+	top:40px;
+	color:white;
+	font-size:25px;
+}
+marquee::first-letter{
+	font-size:40px;
+	color:red;
+}
+
+
+
+</style>
+
+<body>
+<div class="BMI_Main_Container" >
+
+ <marquee behavior ="alternate" truespeed =10 >BMI(Body Mass InDex )</marquee>
+
+<div  class="Input_container" >
+<form>
+<label>Enter Your Age</label>
+<input type="number" placeholder="Enter the Age"  id="age1" >
+<label>Enter Weight</label>
+<input type="number" placeholder="Enter the Weight"  id="weight1" >
+<label>Enter Height</label>
+<input type="number" placeholder="Enter the Height"  id="Height1" >
+
+<button type="button" id="Sub">Submit</button>
+<button type="button" id="clr" >Clear</button>
+</form>
+
+</div>
+
+<div class="display"   >
+
+<p  id="meterline1" >
+
+</p>
+
+<p  id="meterline">
+
+</p>
+
+</div>
+</div>
+
+<script>
+const age = document.getElementById("age1")
+const weight = document.getElementById("weight1")
+const height = document.getElementById("Height1")
+const arrow = document.getElementById("meterline")
+
+
+const Submit = document.getElementById("Sub")
+
+const Clear = document.getElementById('clr')
+
+Submit.addEventListener('click',Cal)
+
+Clear.addEventListener('click', Res)
+
+
+function Cal()
+{
+  let h = height.value*30.48*0.01;
+	let s = Math.pow(h,2)
+  let bmi = weight.value/s;
+
+  let bmi2 =bmi;
+  meterline1.innerText= "Your Current BMI : " + bmi2;
+	
+	
+	
+	if(bmi<18.5)
+	{
+	    meterline.innerText="Your Nutritional Status is : UnderWeight";
+	}
+	  	if(bmi>=18.5&&bmi<=24.9)
+	{
+	    meterline.innerText="Your Nutritional Status is : Normal Weight";
+	}
+	 	if(bmi>=25.0&&bmi<=29.9)
+	{
+	    meterline.innerText="Your Nutritional Status is :  Pre-obesity";
+	}
+	 	if(bmi>=30.00&&bmi<=34.9)
+	{
+	    meterline.innerText="Your Nutritional Status is :  obesity 1";
+	} 
+}
+function Res()
+{
+age.value=""  
+weight.value=""
+height.value=""
+
+
+
+
+}
+
+
+</script>
+
+</body>
+</html>

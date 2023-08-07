@@ -1,0 +1,286 @@
+<html>
+<head>
+<title>My Website</title>
+</head>
+
+
+<style>
+
+body{
+	font-family:serif;
+      margin:0;
+padding:0;
+font-family: sans-serif;
+}
+.Main_container{
+	margin:0;
+	padding:0;
+	width:100%;
+	height:1000px;
+	background-image:url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+	background-size:cover;
+	background-repeat:none;
+}
+.l_img{
+	border-radius:500px;
+	height:80px;
+	width:80px;
+	background-size:cover;
+	position:relative;
+	left:160px;
+	top:15px;
+	transition:1s;
+}
+.header{
+	width:100%;
+	height:150px;
+ position:relative;
+ bottom:30px;
+}
+.Nav_container{
+	display:flex;
+	justify-content:flex-end;
+	gap:25px;
+		color:white;	
+		position:relative;
+		right:40px;
+}
+li{
+	list-style-type:none;
+}
+	
+.Pop_login{
+	width:120px;
+	height:40px;
+	background:transparent;
+	color:white;
+		border:2px solid white;
+	border-radius:5px;
+	margin-top:-10px;
+      transition:0.5s
+}
+.Pop_login:hover{
+background-color:white;
+color:black;
+}	
+.Logo{
+	color: white;
+	font-size: 25px;
+	position: relative;
+	top: 35px;
+	left: 20px;
+	letter-spacing: 2px;
+	font-weight: 700;
+}
+.Logo::first-letter{
+	color: red;
+	font-size:65px;
+	margin-top:15px;
+	
+}
+a{
+	text-decoration:none;
+	color:white;
+      	font-size:17px;
+	letter-spacing:1px;
+}
+
+.Login_form{
+	width:400px;
+	height:450px;
+	background:transparent;
+	backdrop-filter:blur(20px);
+	margin:auto;
+	border-radius: 15px;
+	border:2px solid rgba(119, 149, 177, 0.8);
+	visibility:hidden;
+	
+}
+form{
+      margin-top:10px;
+	display:flex;
+	flex-direction: column;
+	gap:5px;
+      color:white;
+	
+}
+input{
+	width:300px;
+	height:35px;
+	position:relative;
+	left:50px;
+	border:0;
+	background:transparent;
+	border-bottom:3px solid white;
+	outline:none;
+      color:white;
+}
+.login
+{
+ width:300px;
+ height:40px;
+ 	position:relative;
+	left:50px;
+	color:white;
+	background:transparent;
+	margin-top:25px;
+	outline:none;
+	border-radius:10px;
+	
+	border-color:rgba(119, 149, 177, 0.8);
+}
+label{
+	 width:300px;
+ 	position:relative;
+	left:50px;
+	margin-top:10px;
+	transition:0.5s
+	color:black;
+}
+
+</style>
+<body>
+<div class="Main_container"  id="main_container">
+
+<div  class="header">
+
+   <div class="Logo" >
+	 
+	   Destination Travels
+	 </div>
+	
+	 <div class="Nav_container" >
+
+	 	<li><a href="#"  id="dark" >Dark Mode</a></li>
+		<li><a href="https://en.wikipedia.org/wiki/Travel"  target="_self">About</a></li>
+		<li><a href="#" >Careers </a></li>
+		<li><a href="#" >Basic Plans</a></li>
+	  <button type="button" class="Pop_login"  id="login_nav" > 
+		Login
+		</button>
+	 </div>
+	 
+	</div> 	
+
+<div class="Login_form"  id="login_form1" >
+<img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToPmkHXWHdHloDSlJF5TnQcpX9p2VKq1FLCiQspkHBVscvg8IUXH6r-RHXQ1S9fFJY0jw&usqp=CAU" class="l_img">	
+<form>
+<h1 align=center >
+Login
+</h1>
+<label>User name</label>
+<input type="text"   id="username1" >
+<label>Password</label>
+<input type="password"   id="password1" >
+
+<button type="button"  class="login" id="login_button" >
+Login 
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+<script>
+
+const login_button1=document.getElementById('login_nav');
+
+const login_form = document.getElementById('login_form1')
+
+const username=document.getElementById("username1")
+
+const password = document.getElementById("password1")
+
+const login_formButton =document.getElementById('login_button')
+
+const darkmode = document.getElementById('dark')
+
+var a=0;
+
+login_formButton.addEventListener('click', Validate)
+
+login_button1.addEventListener('click', display)
+
+darkmode.addEventListener('click', dmode)
+
+
+function dmode()
+{
+  document.getElementById("main_container").style.background="black";
+
+  	a=a+1;
+	
+	if(a%2==0)
+	{
+	  document.getElementById("main_container").style.backgroundImage="url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')";
+        document.getElementById("main_container").style.backgroundRepeat = "none"
+               document.getElementById("main_container").style.backgroundSize= "cover"
+	}
+      else
+{
+   document.getElementById("main_container").style.background="black";
+}
+	
+}
+
+
+function display()
+{
+  document.getElementById('login_form1').style.visibility = 'visible';
+}
+
+function Validate()
+{
+  let rgx = '[a-z0-9]+@[a-z]+\.[a-z]{2,3}'
+	
+  var a =0;
+	var b= 0;
+
+ if(username.value==""||!(isNaN(username.value)))
+ {
+    username.style.borderBottom="3px solid red";
+ }
+ else
+ {
+ username.style.borderBottom="3px solid green";
+  a=a+1
+ }
+ 
+ if(password.value<=4||password.value.match(rgx)||password.value=="")
+ {
+ 
+   password.style.borderBottom="3px solid red";
+ }
+ else
+ {
+ password.style.borderBottom="3px solid green";
+ b=b+1;
+ }
+ 
+ if(a+b==0)
+ {
+  document.getElementById('login_form1').style.visibility = 'hidden';
+	password.style.borderBottom="3px solid white";
+	username.style.borderBottom="3px solid white";
+ }
+ else
+ {
+      if(a+b==1)
+	{
+	 alert("please enter another input properly")
+	}
+	else
+	
+	{
+	alert("login success")
+	}
+}
+}
+
+
+</script>
+</body>
+</html>

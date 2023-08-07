@@ -1,0 +1,184 @@
+<html>
+<head>
+<title>Form</title>
+
+<style>
+
+.Main_container{
+	width:1000px;
+	height:1000px;
+	background-color:azure;
+	border:1px solid black;
+}
+.Form_container{
+	width:450px;
+	height:350px;
+	background-color:white;
+	border:1px solid black;
+
+}
+form{
+	display:flex;
+	flex-wrap:wrap;
+  flex-direction:column;
+	gap:5px;
+		margin-left:25px;
+	
+}
+input{
+	width:250px;
+	height:20px;
+	padding:3px 20px;
+} 
+
+.res_table{
+	margin-top:15px;
+	width:800px;
+	height:450px;
+	background-color:#d6d6d4;
+}
+button{
+	background-color:blue;
+	color:white;
+	width:250px;
+	height:20px;
+	padding:3px 20px;
+}
+#chck{
+	width:70px;
+	height:15px;
+}
+</style>
+</head>
+<body>
+
+<div  class=Main_container >
+
+<div class="Form_container" >
+<form>
+<label>First Name </label>
+<input type="text" placeholder="Enter the First name:" id="Fname" >
+<label>Last Name </label>
+<input type="text" placeholder="Enter the Last name:" id="Lname" >
+<label>Contact Number </label>
+<input type="number" placeholder="Enter the Contact Number:" id="Cnumber" >
+<label>Alternate Number </label>
+<input type="number" placeholder="Enter the Alternate Number:" id="Anumber">
+<label>Email Address </label>
+<input type="email" placeholder="Enter the Email:" id="Email">
+
+<button type="button"  id="Submit1" >
+Submit
+</button>
+<button type="button"  id="Delete_1" >
+Delete Row
+</button>
+</form>
+
+</div>
+
+
+<div class="res_table" > 
+
+<table    border=2  id="table1" >
+
+<tr>
+	<th>Selection</th>
+	<th>First name</th>
+	<th>Last name</th>
+	<th>Contact NUmber</th>
+	<th>Alternate Number</th>
+	<th>Email</th>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<script>
+
+const Fname1 = document.getElementById("Fname")
+const Lname1 = document.getElementById("Lname")
+const Contact = document.getElementById("Cnumber")
+const Alternate = document.getElementById("Anumber")
+const Email = document.getElementById("Email")
+const Submit = document.getElementById("Submit1")
+const Delete = document.getElementById("Delete_1")
+
+
+
+Submit.addEventListener('click', Sub)
+
+Delete.addEventListener('click', Del)
+
+
+function Sub()
+{
+
+  let table = document.getElementById("table1")
+	  var row = table.insertRow(table.rows.length);
+            var cell1 = row.insertCell(0);
+            var checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+						checkbox.id="chck"
+            cell1.appendChild(checkbox);
+						
+						var cell2 = row.insertCell(1);
+						var cell3 = row.insertCell(2);
+						var cell4 = row.insertCell(3);
+						var cell5 = row.insertCell(4);
+						var cell6 = row.insertCell(5);
+						
+             cell2.innerText=Fname1.value;
+						 cell3.innerText=Lname1.value;
+						 cell4.innerText=Contact.value;
+						 cell5.innerText=Alternate.value;
+						 cell6.innerText=Email.value;
+
+
+}
+
+function Del()
+{
+   let table = document.getElementById("table1");
+	 
+	 var row = table.rows.length;
+	 
+	    
+            var counter = 0;
+						
+            if (table.rows.length > 1) 
+						{
+                for (var i = 0; i <table.rows.length; i++) 
+								{
+                    var chk =table.rows[i].cells[0].childNodes[0];
+                    if (chk.checked)
+										{
+                        table.deleteRow(i);
+                        row--;
+                        i--;
+                        counter = counter + 1;
+                    }
+                }
+                if (counter == 0)
+								{
+                    alert("Please select the row that you want to delete.");
+                }
+            }
+						else
+						{
+                alert("There are no rows being added");
+            }
+	 
+	 
+	 
+	 
+
+
+}
+</script>
+
+</body>
+</html>

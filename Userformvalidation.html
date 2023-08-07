@@ -1,0 +1,138 @@
+<html>
+<head>
+<title>My page</title>
+</head>
+<style>
+fieldset{
+  border:2px solid red;
+  width:600px;
+  height:550px;
+   border-color:white;
+  border-radius:10px;
+  
+  background-image:url("https://images.pexels.com/photos/7130560/pexels-photo-7130560.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+}
+input{
+  width:240px;
+  height:40px;
+  border-color:white;
+  border-radius:10px;
+  text-align:center;
+  
+}
+label{
+  font-size:20px;
+  color:white;
+}
+button{
+  width:140px;
+  height:40px;
+  border-color:white;
+  border-radius:10px;
+ 
+}
+
+</style>
+<body>
+
+
+<fieldset>
+<legend>
+User data
+</legend>
+
+<form action="https://www.google.com/"  method="post" >
+
+<table    cellspacing="25px" >
+<tr>
+  <td><label>User name :</label></td>
+  <td><input  type="text" id="user_name" placeholder="Username" ></td>
+</tr>
+<tr>
+  <td><label>contact number :</label></td>
+  <td><input  type="number" id="user_number" placeholder="Contact number" ></td>
+</tr>
+<tr>
+  <td><label>Email:</label></td>
+  <td><input  type="text" id="user_email" placeholder="Email" ></td>
+</tr>
+<tr>
+  <td><label>Password:</label></td>
+  <td><input  type="password" id="user_password" placeholder="Password" ></td>
+</tr>
+<tr>
+  <td><label>Re Password:</label></td>
+  <td><input  type="password" id="user_repassword" placeholder="Password" ></td>
+</tr>
+
+</table>
+
+ <button  type="button"  align="center" id="User_submit" >
+  Submit
+  </button>
+     <button  type="button" align="center"  id="User_reset" >
+  reset
+  </button>
+
+</form>
+</fieldset>
+
+<script>
+const username  = document.getElementById("user_name")
+
+const contact = document.getElementById("user_number")
+
+const email = document.getElementById("user_email")
+
+const password = document.getElementById("user_password")
+
+
+const repsd = document.getElementById("user_repassword")
+
+const submit  = document.getElementById("User_submit")
+
+/* const reset  = document.getElementById("User_reset") */
+
+
+submit. addEventListener('click',submitd);
+
+
+
+var name,cnumber,cmail,cpsd,result;
+
+
+
+function submitd()
+{
+ if(username.value==""||(username.value).length<4)
+  {
+    alert("Please Enter the valid User name :")
+  } 
+  
+  if(parseInt(contact.value)==0||isNaN(parseInt(contact.value)))
+  {
+    alert("Please Enter the valid Number :")
+  } 
+  
+  
+  if(email.value==""||email.value.length<8)
+  {
+  alert("Please Enter a valid email id:")
+  }
+   
+  if(password.value==""||repsd.value=="")
+ {
+  alert("Please Enter the valid password")
+ }
+ 
+  
+ 
+}
+
+
+
+
+</script>
+
+</body>
+</html>

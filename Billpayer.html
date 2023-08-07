@@ -1,0 +1,174 @@
+<html>
+<head>
+
+<title>Random Bill Payer</title>
+</head>
+<style>
+
+body{
+
+background-color: #ffff00;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ff8000'/%3E%3Cstop offset='1' stop-color='%23ff8000' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2300ff19'/%3E%3Cstop offset='1' stop-color='%2300ff19' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%239900ff'/%3E%3Cstop offset='1' stop-color='%239900ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffff00'/%3E%3Cstop offset='1' stop-color='%23ffff00' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FF0000'/%3E%3Cstop offset='1' stop-color='%23FF0000' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%230CF'/%3E%3Cstop offset='1' stop-color='%230CF' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+
+}
+
+.Main_container{
+	width:500px;
+	height:500px;
+	background:transparent;
+	position:relative;
+       top:250px;
+	border:1px solid white;
+     margin:auto;
+     border-radius:10px;
+}
+.Input_container{
+	width:350px;
+	height:380px;
+		
+		position:relative;
+		left:80px;
+		top:20px;
+		background:transparent;
+}
+form{
+	display:flex;
+	flex-direction:column;
+	row-gap:10px;
+}
+input{
+	width:250px;
+	padding:10px;
+		position:relative;
+		left:40px;
+font-size:15px;
+color:white;
+  border:0;
+outline:none;
+border-bottom:1px solid white;
+		
+background:transparent;
+}
+button:hover{
+background-color:white;
+color:transpare;
+transition:1.5s;
+}
+
+button{
+	background:transparent;
+	color:white;
+	width:270px;
+  border:1px solid white;
+		position:relative;
+		left:40px;
+            cursor:pointer;
+		height:35px;
+		border-radius:10px;
+}
+label{
+		position:relative;
+		left:40px;
+}
+.res_container{
+	width:300px;
+	height:80px;
+	border:1px solid white;
+	position:relative;
+		left:30px;
+		top:20px;
+}
+.logo{
+	color:white;
+	text-align:center;
+	
+}
+.brd{
+color:white;
+}
+::placeholder{
+color:white;
+}
+
+</style>
+<body>
+<div  class="Main_container" >
+<h1 class="logo" >
+Who will pay the Bill
+</h1>
+<div class="Input_container" >
+<form>
+
+
+<input type="text" placeholder="Enter the Names" id="usr_name1">
+
+<button type="button" class="SUBmit"  id="Submit" >
+Submit names
+
+</button>
+<button type="button" class="decide"  id="decider" >
+Decide the payer
+</button>
+</form>
+
+<div class="res_container" >
+
+<p id="res_con" >
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+const name = document.getElementById("usr_name1");
+
+
+
+const Submit = document.getElementById("Submit")
+
+const Decider = document.getElementById("decider")
+
+const output = document.getElementById("res_con");
+
+let res=[];
+
+Submit.addEventListener('click',caller )
+
+Decider.addEventListener('click', Decide)
+
+
+
+
+function caller()
+{
+
+
+
+res.push(usr_name1.value)
+
+console.log(res)
+
+}
+
+
+function Decide()
+{
+
+let ran1 = Math.floor(Math.random()*res.length)
+
+console.log(ran1,res[ran1])
+
+output.innerText="The Bill payer will be:"+"   " +res[ran1].toUpperCase();
+}
+
+
+</script>
+
+</body>
+</html>

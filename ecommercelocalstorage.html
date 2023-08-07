@@ -1,0 +1,598 @@
+<html>
+<head>
+<title>Ecommerence Platform</title>
+</head>
+
+<style>
+body{
+font-family: sans-serif;
+}
+
+
+.Main_container{
+	width: 100%;
+	height: 1000px;
+	background-image:url('https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+	background-size:cover;
+	background-repeat:none;
+	border: 1px solid black;
+}
+.header{
+	height:60px;
+	width:100%;
+	margin-top:-20px;
+	background-color:rgba(37, 232, 189, 0.8);
+	
+}
+
+.Logo::first-letter{
+
+color:red;
+font-size:35px;
+
+}
+.Logo{
+  width:200px;
+	height:40px;
+       font-size:30px;
+	position:relative;
+	top:10px;
+      letter-spacing:2px;
+	left:10px;
+	font-size:20px;
+	color:white;
+}
+.nav_bar{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	gap:6rem;
+	position:relative;
+	left:70px;
+	top:-15px;
+}
+a{
+	text-decoration:none;
+	color:white;
+}
+thead{
+	
+	background-color:black;
+	color:white;
+}
+  
+
+img{
+	width:70px;
+	height:70px;
+	border-radius:10px;
+}
+.User_details{
+	width:500px;
+	height:650px;
+	overflow-y:scroll;
+	backdrop-filter:blur(20px);
+      margin:auto;
+	 position:relative;
+	 top:50px;
+	
+  display:none;
+	}
+	
+	
+.product_page{
+
+width:700px;
+	height:650px;
+	overflow-y:scroll;
+	backdrop-filter:blur(20px);
+      margin:auto;
+	 position:relative;
+	 top:50px;
+      display:none;
+}
+
+
+	form{
+	display:flex;
+  flex-direction:column;
+   	position:relative;
+	left:50px;
+	gap:10px;
+	
+}
+
+table{
+color:white;
+}
+h1{
+	color:white;
+}
+input{
+	width:450px;
+	padding:7px;
+	margin-left:15px;
+		border-radius:10px;
+		border : 1px solid black;
+		outline:none
+		
+}
+label{
+	margin-left:15px;
+	color:white;
+  position:relative;
+
+	
+}
+button{
+	width:450px;
+	padding:7px;
+	margin-left:15px;
+	background-color:blue;
+	color:white;
+	border-radius:10px;
+	border-color:blue;
+	cursor:pointer;
+	margin-top:5px;
+}
+.Signup{
+	width:600px;
+	height:700px;
+	border:1px solid white;
+	border-radius:20px;
+	position:relative;
+	top:100px;
+	 margin:auto;	backdrop-filter:blur(20px);
+	display:none;
+	
+}
+.login1{
+	width:600px;
+	height:300px;
+	border:1px solid white;
+	border-radius:20px;
+	position:relative;
+	top:100px;
+	 margin:auto;
+	backdrop-filter:blur(20px);
+	display:none;
+}
+</style>
+<body>
+<div class="Main_container">
+<div class="header" >
+<div class="Logo" >
+<p>
+E-commerce
+</p>
+</div>
+<div  class="nav_bar">
+<a href="#" >Home</a>
+<a href="#"  id="usd" >User Details</a>
+<a href="#"  id="sp1" >Sign Up</a>
+<a href="#"  id="log" >Login</a>
+<a href="#"   id="product" >Products</a>
+</div>
+</div>
+
+<div class="User_details"  id="userdatablock" >
+
+<table id="table1" border  cellpadding="6px" cellspacing="0"  >
+<thead>
+	<tr>
+		<th>Id</th>
+		<th>Login</th>
+		<th>Node_id</th>
+		<th>Proflie Picture</th>
+	</tr>
+</thead>
+<tbody id="user_details1" >
+	
+</tbody>
+</table>
+
+</div>
+
+
+
+
+
+<div class="Signup"  id="Signup1" >
+
+<form  >
+<h1 align="center"  class="h11" >
+Enter Student Details
+</h1>
+<label>First name</label>
+<input type="text"  id="fname" placeholder="Firstname">
+<label>Last name </label>
+<input type="text"  id="Lname" placeholder="Lastname">
+<label>Date of Birth </label>
+<input type="date"  id="DOb" placeholder="Date of Birth">
+<label>Moblie Number </label>
+<input type="number"  id="pnum" placeholder="Moblie Number">
+<label>Alternate Moblie number </label>
+<input type="number"  id="anum" placeholder="Alternate Number">
+<label>Email id </label>
+<input type="email"  id="email" placeholder="Email id ">
+
+<button type="button"  id="submit" >
+Submit
+</button>
+<button type="button"  id="reset" >
+reset
+</button>
+
+</form>
+
+</div>
+
+<div class="login1"  id="login">
+
+<form>
+<h1 align="center"  id="title" >
+User Login
+</h1>
+
+<label>Email</label>
+<input type="text"  id="user_name"  placeholder="abc@gmail.com" >
+<label>Contact Number</label>
+<input type="number" id="user_password" placeholder="7******" >
+
+<button type="button" id="user_click" >
+Submit 
+</button>
+
+
+</form>
+
+</div>
+
+
+
+<div class="product_page"  id="product_block" >
+
+
+<table border  cellspacing="0"  cellpadding="5px" >
+
+<thead>
+	<tr>
+		<th>S/no</th>
+		<th>Product category</th>
+		<th>Product Description</th>
+		<th>Product Price</th>
+		<th>Product image</th>
+	</tr>
+</thead>
+<tbody  id="tbody1">
+	
+	
+</tbody>
+
+</table>
+
+
+</div>
+
+<script>
+
+const UserDetails = document.getElementById('usd')
+
+
+
+const first_name = document.getElementById("fname")
+
+const Last_name = document.getElementById("Lname")
+
+const dateofBirth = document.getElementById("DOb")
+
+const ContactNumber = document.getElementById("pnum")
+
+const Altnum = document.getElementById("anum")
+
+const Email = document.getElementById("email")
+
+const Submit_det = document.getElementById("submit")
+
+const Reset_det = document.querySelectorAll("input")
+
+const ress = document.getElementById("reset")
+
+
+const username = document.getElementById("user_name")
+
+const password = document.getElementById("user_password")
+
+const button1 = document.getElementById("user_click")
+
+const res1 = document.getElementById("res_container1")
+
+
+
+Submit_det.addEventListener('click',getSignup)
+
+ress.addEventListener('click', reset)
+
+sp1.addEventListener('click',  signpop);
+
+log.addEventListener('click', login2  );
+
+UserDetails.addEventListener('click',  usdcall)
+
+product.addEventListener('click',  prodBlock)
+
+button1.addEventListener('click', validate)
+
+ var b=0;
+
+var h=0;
+  var a=0;
+	
+	var c=0;
+	
+function usdcall()
+{
+  	 a=a+1;
+
+  fetch("https://api.github.com/users")
+
+.then((data)=>{
+  return data.json();
+})
+
+.then((odata)=>{
+
+console.log(odata)
+ 
+ let output=""
+ 
+ odata.map((values)=>{
+   output+=`
+	 <tr>
+	 <td>${values.id}</td>
+	 <td>${values.login}</td>
+    <td>${values.node_id}</td>
+		<td> <img src="${values.avatar_url} >"
+	 
+	 </tr>
+	 
+	 `
+ })
+ 
+ document.getElementById('user_details1').innerHTML=output;
+ 
+  
+	
+})
+
+  document.getElementById('userdatablock').style.display="block";
+ 
+	 if(a%2==0)
+	 {
+	  document.getElementById('userdatablock').style.display="none";
+	 }
+  
+}
+
+
+function signpop()
+{
+  document.getElementById('Signup1').style.display="block";
+	
+	b=b+1;
+	
+	 if(b%2!=0)
+	 {
+	  document.getElementById('Signup1').style.display="none";
+	 }
+  
+}
+
+
+function getSignup()
+{
+    var letters = /^[A-Za-z]+$/;
+
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+
+ 
+ if(first_name.value.match(letters))
+ {
+  document.getElementById("fname").style.border="2px solid green";
+	
+	localStorage.setItem('Firstname',first_name.value);
+   
+ }
+ else
+ {
+  document.getElementById("fname").style.border="2px solid red"
+ 
+ 
+ }
+ 
+/*  last name validation  */
+  
+	if(first_name.value.match(Last_name.value))
+ {
+  document.getElementById("Lname").style.border="2px solid red"
+
+
+ }
+ else
+ {
+   if(Last_name.value.match(letters))
+{
+  document.getElementById("Lname").style.border="2px solid green"
+  localStorage.setItem('Lastname',Last_name.value);
+}
+ }
+
+
+
+ if(isNaN(dateofBirth.value))
+ {
+   document.getElementById("DOb").style.border="2px solid green"
+ 
+ localStorage.setItem('date of birth',dateofBirth.value);
+
+ }
+ else
+{
+  document.getElementById("DOb").style.border="2px solid red"
+ 
+}
+ if(ContactNumber.value.length==10)
+ {
+  document.getElementById("pnum").style.border="2px solid green"
+ localStorage.setItem('contact number',ContactNumber.value);
+
+ }
+ else
+ {
+  document.getElementById("pnum").style.border="2px solid red"
+
+ }
+ 
+ if(Altnum.value!=ContactNumber.value)
+ {
+  document.getElementById("anum").style.border="2px solid green"
+localStorage.setItem('Alternate number',Altnum.value);
+ }
+ else{
+  document.getElementById("anum").style.border="2px solid red"
+
+ }
+ 
+ if(Email.value.match(validRegex))
+ {
+   document.getElementById("email").style.border="2px solid green"
+   localStorage.setItem('Email',Email.value);
+ }
+ else{
+  document.getElementById("email").style.border="2px solid red"
+
+   }
+}
+
+function reset()
+{
+   first_name.value=""
+	 Last_name.value=""
+	 dateofBirth.value=" "
+	 ContactNumber.value=" "
+	 Altnum.value=""
+  Email.value=""
+
+}
+
+
+
+
+function validate()
+{
+    
+			var val = 0;	
+		
+	let email1=	 localStorage.getItem('Email');
+	
+	let cnumber=localStorage.getItem('contact number')
+		
+	if(username.value==email1)
+	{
+	   document.getElementById('user_name').style.border=" 1px solid green";
+	 if(password.value==cnumber)
+	{
+	  document.getElementById('user_password').style.border=" 2px solid green";
+		
+		
+		alert("Login Success")
+
+	}
+	
+	
+	else{
+	document.getElementById('user_password').style.border=" 2px solid red"
+	
+	 alert("Enter a valid  contact number");
+	}	
+	
+	}
+	else{
+	document.getElementById('user_name').style.border="2px solid red"
+	
+         alert("Enter a valid  Email Id");
+
+	}
+		 	
+}
+
+
+
+function login2()
+{
+  document.getElementById('login').style.display="block";
+	
+	c=c+1;
+	
+	 if(c%2!=0)
+	 {
+	  document.getElementById('login').style.display="none";
+	 }
+  
+}
+
+
+function prodBlock()
+{
+
+ h=h+1;
+
+fetch('https://fakestoreapi.com/products')
+
+.then((Data1)=>{
+  return Data1.json();
+})
+.then((ObjectData)=>
+{
+  console.log(ObjectData)
+	
+	let tableData =""
+	
+	ObjectData.map((values)=>{
+	  tableData+=`
+		<tr>
+		<td>${values.id}</td>
+		<td>${values.category}</td>
+		
+		<td>${values.description}</td>
+		<td>${values.price}</td>
+		
+		<td> <img src="${values.image}" ></td>
+		
+		</tr>
+		
+		`
+	})
+	
+	document.getElementById('tbody1').innerHTML=tableData;
+	
+})
+
+ document.getElementById('product_block').style.display="block";
+
+if(h%2!=0)
+{
+document.getElementById('product_block').style.display="none";
+}
+
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>

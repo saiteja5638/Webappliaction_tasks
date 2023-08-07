@@ -1,0 +1,361 @@
+<html>
+
+  <head>
+    <title>Student Mark Sheet Data</title>
+  </head>
+<style>
+
+body{
+background-color: #000000;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg fill-opacity='0.78'%3E%3Cpolygon fill='%234c0000' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%236c0000' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23840000' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23980000' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23A00' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+}
+
+.Main_container{
+	width:100%;
+	height:1000px;
+	border:0;
+	display:flex;
+  justify-content:space-evenly;
+   align-items:center;
+ margin:auto;
+	
+}
+.User_input{
+	width:550px;
+	height:700px;
+	border:1px solid white;
+	border-radius:10px;
+ 	background:transparent;
+  backdrop-filter: blur(30px);
+
+}
+.Report_data{
+		width:550px;
+	height:700px;
+	border:1px solid white;
+	background:transparent;
+      border-radius:10px;
+      backdrop-filter: blur(30px);
+}
+form{
+	display:flex;
+	flex-direction:column;
+	gap:8px;
+	margin-top:0px;
+}
+input,button{
+	width:300px;
+	height:30px;
+	position:relative;
+	left:50px;
+      border-radius:10px;
+	outline:none;
+	padding:2px;
+	
+}
+
+input{
+
+background:transparent;
+
+border:0;
+border-bottom:1px solid white;
+color:white;
+border-radius:1px;
+}
+label{
+		position:relative;
+	left:50px;
+	top:5px;
+	color:white;
+}
+button{
+background:transparent;
+border-color:white;
+color:white;
+top:15px;
+margin:5px;
+}
+h1{
+		color:white;
+	text-align:center;
+}
+#chckbox{
+	width:40px;
+	height:20px;
+	position:relative;
+		left:0px;
+}
+table{
+color:white;
+border-color:white;
+}
+
+</style>
+  <body>
+
+    <div class="Main_container">
+
+
+
+      <div class="User_input">
+        <form>
+          <h1>
+            Enter Student Mark Details
+          </h1>
+          <label>Serial number</label>
+          <input type="number" id="s_number" placeholder="serial number">
+          <label>Student Name</label>
+          <input type="text" id="s_name" placeholder="Student Name">
+          <label>Contact number</label>
+          <input type="number" id="c_number" placeholder="Contact number">
+          <label>Maths A Marks</label>
+          <input type="number" id="MathA" placeholder="Maths A marks">
+          <label>Maths B Marks</label>
+          <input type="number" id="MathB" placeholder="Maths B marks">
+          <label>Physics Marks</label>
+          <input type="number" id="Phys" placeholder="Physics marks">
+          <label>Chemistry Marks</label>
+          <input type="number" id="Chem" placeholder="Chemistry marks">
+
+          <button type="button" id="Submit">
+            Submit
+          </button>
+
+          <button type="button" id="Reset">
+            Reset
+          </button>
+
+          <button type="button" id="Del">
+            Delete
+          </button>
+        </form>
+      </div>
+      <div class="Report_data">
+
+
+    <h1>  Students Result </h1>
+ 
+     <table  border=1  id="table1" >
+		 
+		 <tr>
+		 	<th>Select</th>
+			<th id="tdsno" >S.No</th>
+			<th>Student name</th>
+			<th>Contact Number</th>
+			<th>Maths A</th>
+			<th>Maths B</th>
+			<th>Physics</th>
+			<th>Chemistry</th>
+			<th>Total</th>
+		 </tr>
+		 
+		 </table>
+ 
+ 
+ 
+      </div>
+
+    </div>
+
+
+<script>
+const serialnumber=document.getElementById("s_number")
+const studentname=document.getElementById("s_name")
+const contactnumber=document.getElementById("c_number")
+const mathsamarks=document.getElementById("MathA")
+const mathsbmarks=document.getElementById("MathB")
+const physicsmarks=document.getElementById("Phys")
+const chemistrymarks=document.getElementById("Chem")
+const  submit=document.getElementById("Submit")
+const reset=document.getElementById("Reset")
+const del = document.getElementById("Del")
+
+
+var a=0,b=0,c=0,d=0,e=0,f=0,i=0,j=0;
+
+
+
+
+
+var serialnum=[];
+var studentnm=[];
+var cnum=[];
+var mta=[];
+var mtb=[];
+var py=[];
+var chm=[];
+var tt=[];
+
+
+
+
+
+
+
+const tablecell = document.getElementById("tdsno");
+
+
+submit.addEventListener('click', Sub)
+
+reset.addEventListener('click', reset1)
+
+del.addEventListener('click', delete1)
+
+tablecell.addEventListener('click', sortTable)
+
+
+function Sub()
+{
+  
+	var table = document.getElementById('table1')
+	
+	let row = table.insertRow(table.rows.length)
+	
+	let cell1 = row.insertCell(0)
+	
+	let checkbox = document.createElement('input')
+	
+	checkbox.type='checkbox'
+	checkbox.id="chckbox";
+	
+	cell1.appendChild(checkbox)
+	
+	
+      let c2 = row.insertCell(1)
+      c2.id="serialnumber2"
+      let c3 = row.insertCell(2)
+	let c4 = row.insertCell(3)
+	let c5 = row.insertCell(4)
+	let c6 = row.insertCell(5)
+	let c7 = row.insertCell(6)
+	let c8 = row.insertCell(7)
+	let c9 = row.insertCell(8)
+
+
+
+
+    serialnum.push(serialnumber.value)
+    studentnm.push(studentname.value)
+  cnum.push(contactnumber.value)
+  mta.push(mathsamarks.value)
+  mtb.push(mathsbmarks.value)
+  py.push(physicsmarks.value)
+  chm.push(chemistrymarks.value)
+
+
+console.log(serialnum,studentnm,cnum,mta,mtb,py,chm)
+
+
+
+	
+	let total = parseInt(mathsamarks.value)+parseInt(mathsbmarks.value)+parseInt(physicsmarks.value)+parseInt(chemistrymarks.value);
+	
+	 tt.push(total)
+
+	c2.innerText=serialnum[a++];
+	c3.innerText=studentnm[b++];
+	c4.innerText=cnum[c++];
+	c5.innerText=mta[d++];
+	c6.innerText=mtb[e++];
+	c7.innerText=py[f++];
+	c8.innerText=chm[i++];
+	c9.innerText=tt[j++]
+
+if(isNaN(total))
+{
+  c9.innerText="";
+}
+sortTable()
+}
+
+
+function reset1()
+{
+	serialnumber.value="";
+	studentname.value="";
+	contactnumber.value="";
+	mathsamarks.value="";
+	mathsbmarks.value="";
+	physicsmarks.value="";
+	chemistrymarks.value="";
+}
+
+function delete1()
+{
+ var table = document.getElementById("table1");
+	 
+	 var row = table.rows.length;
+	 
+	    
+            var counter = 0;
+						
+            if (table.rows.length > 1) 
+						{
+                for (var i = 0; i <table.rows.length; i++) 
+								{
+                    var chk =table.rows[i].cells[0].childNodes[0];
+                    if (chk.checked)
+										{
+                        table.deleteRow(i);
+                        row--;
+                        i--;
+                        counter = counter + 1;
+                    }
+                }
+                if (counter == 0)
+								{
+                    alert("Please select the row that you want to delete.");
+                }
+            }
+						else
+						{
+                alert("There are no rows being added");
+            }
+	
+	
+}
+
+
+function sortTable() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+
+  table = document.getElementById("table1");
+  switching = true;
+ 
+  while (switching) {
+  
+    switching = false;
+    rows = table.rows;
+ 
+    for (i = 1; i < (rows.length - 1); i++) {
+     
+      shouldSwitch = false;
+   
+      x = rows[i].getElementsByTagName("TD")[1];
+      y = rows[i + 1].getElementsByTagName("TD")[1];
+ 
+      if (Number(x.innerHTML) > Number(y.innerHTML)) {
+     
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+
+
+
+
+
+</script>
+  </body>
+
+</html>

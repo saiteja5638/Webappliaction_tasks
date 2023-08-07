@@ -1,0 +1,326 @@
+
+<html>
+
+<head><title>softtech</title></head>
+<style> 
+.Main_container {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(45, 45, 168, 1) 33%, rgba(0, 212, 255, 1) 67%, rgba(0, 212, 255, 1)8%);
+  width: 800px;
+  height: 800px;
+
+}
+
+.head_container {}
+
+.Sign1 {
+  color: azure;
+  font-family: sans-serif;
+
+}
+
+.Sign1::first-letter {
+
+  font-size: 85px;
+  font-style: italic;
+  color: red;
+}
+
+.Login_form {
+
+  width: 400px;
+  height: 480px;
+  background-color: aliceblue;
+  position: relative;
+  left: 150px;
+  top: 45px;
+  border-radius: 10px;
+  display: card;
+
+}
+
+.Sign {
+  color: black;
+  text-align: center;
+  font-size: 25px;
+  padding: 10px 10px;
+  letter-spacing: 2px;
+
+}
+
+.Sign::first-letter {
+  color: red;
+  font-size: 35px;
+
+}
+
+.submit:hover{
+	background-color:white;
+	color:blue;
+	border:1px solid blue;
+	transition:0.5s;
+}
+
+.input_control{
+	display:flex;
+	flex-direction:column;
+	margin:10px;
+	
+}
+.input_control input{
+	border:2px solid azure;
+	border-radius:4px;
+	display:block;
+	padding:10px;
+	width:300px;
+	
+	
+}
+
+.submit{
+	
+	padding:10px;
+	border:none;
+	margin-top:10px;
+	margin-left:10px;
+	color:white;
+	background-color: blue;
+	width:83%;
+	border-radius:4px;
+}
+
+.input_control  input:focus{
+	
+	outline:0;
+	
+	
+}
+.input_control.error  input{
+	border-color:red;
+}
+.input_control.success  input{
+	border-color:green;
+}
+
+</style>
+
+<body>
+
+<div  class="Main_container" >
+
+<div class="head_container" >
+ <h1 align="center"  class="Sign1" >
+    Spark Solutions 
+ </h1>
+</div>
+
+ <div class="Login_form" >
+ <h1 class="Sign" >
+   Sign up
+ </h1>
+ 
+
+
+<form   action=""  method="post"  id="form" >
+
+<div  class="input_control" >
+
+<label   for=username >Username</label>
+
+<input  name="username" id="username1"  type="text" >
+
+<div class="error"  >
+
+</div>
+
+</div>
+<div  class="input_control" >
+
+<label   for=useremail >Email</label>
+
+<input  name="useremail" id="userEmail1"  type="email" >
+
+<div class="error"  >
+
+</div>
+
+</div>
+<div  class="input_control" >
+
+<label   for=usercontact >Contact Number</label>
+
+<input  name="usercontact" id="userContact"  type="number" >
+
+<div class="error"  >
+
+</div>
+
+</div>
+
+<div  class="input_control" >
+
+<label   for=username >Password</label>
+
+<input  name="username" id="userpsd"  type="password" >
+
+<div class="error"  >
+
+</div>
+
+</div>
+
+
+<div  class="input_control" >
+
+<label   for=username >Re password</label>
+
+<input  name="username" id="userrepsd"  type="password" >
+
+<div class="error"  >
+
+</div>
+
+</div>
+
+<button type="submit" id="submit" class="submit">
+ Sign up
+</button>
+
+
+</div>
+
+</div>
+
+
+
+</form>
+
+
+
+ 
+</div> -->
+
+</div>
+
+<script >
+
+
+const Form = document.getElementById("form")
+
+const user_name=document.getElementById("username1")
+
+const user_email=document.getElementById("userEmail1")
+
+const contact =document.getElementById("userContact")
+
+const pass =document.getElementById("userpsd")
+
+const repass=document.getElementById("userrepsd")
+
+const submit1=document.getElementById("submit")
+
+
+var res=true;
+
+submit1.addEventListener('click', validation)
+
+
+
+  function validation(e)
+	{
+	  e.preventDefault()
+		
+		validate()
+	}
+
+function validate()
+{
+   if(user_name.value==='')
+	 {
+	   document.getElementById('username1').style.borderColor="red"
+		
+		 res=false;
+	 }
+	 else{
+	  document.getElementById('username1').style.borderColor="green"
+	 }
+	 
+	 if(user_email.value==='')
+	 {
+	   document.getElementById('userEmail1').style.borderColor="red"
+           res=false;
+	 }
+	 else{
+	  document.getElementById('userEmail1').style.borderColor="green"
+	 }
+	 
+	 if(isNaN(contact.value)||contact.value.length<=9||contact.value.length>10)
+	 {
+	  document.getElementById('userContact').style.borderColor="red" 
+            res=false;
+	 }
+	 else{
+	 document.getElementById('userContact').style.borderColor="green"
+	 }
+	 
+	 
+	 if(pass.value==='')
+	 {
+	   document.getElementById('userpsd').style.borderColor="red"
+
+            res=false;
+	 }
+	  else{
+	 document.getElementById('userpsd').style.borderColor="green"
+	 }
+	  if(repass.value==='')
+	 {
+	   document.getElementById('userrepsd').style.borderColor="red"
+
+           res=false;
+	 }
+	  else{
+	  if(repass.value==pass.value)
+		{
+		  document.getElementById('userrepsd').style.borderColor=" green"
+		}
+		else{
+		 document.getElementById('userrepsd').style.borderColor="red"
+		 document.getElementById('e-message').innerText="please "
+		}
+	 }
+
+
+ if(res==true)
+{
+  setTimeout(True, 1000)
+	
+	function True()
+	{
+	 alert("login success")
+	}
+}
+
+if(res==false)
+{
+setTimeout(True1, 1000)
+	
+	function True1()
+	{
+	 alert("login Failed")
+	}
+}
+	 
+}
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

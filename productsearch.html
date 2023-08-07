@@ -1,0 +1,273 @@
+<html>
+<head>
+<title>Product Search</title>
+</head>
+<body>
+<style>
+
+body{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	background-color:whitesmoke;
+}
+
+
+.Container{
+	width:350px;
+	height:600px;
+	background-color:white;
+  border-radius:15px;
+	box-shadow: 4px 4px 30px black;
+	overflow-y:scroll;
+}
+
+
+.product img{
+ width:90px;
+ height:90x;
+ object-fit:cover;
+ border-radius:10px;
+ 
+}
+
+input{
+	width:250px;
+	height:35px;
+	border-radius:10px;
+	position:relative;
+	left:30px;
+	top:12px;
+	
+}
+.product{
+	display:flex;
+	align-items:center;
+	cursor:pointer;
+	position:relative;
+	left:45px;
+	
+}
+h3,h2{
+	padding-left:10px;
+	
+}
+</style>
+
+<section  class="Container" >
+
+<form>
+<input type="text" id="search" onkeyup="search12()"  >
+
+
+
+
+</form>
+
+	<div  class="Product_List"  id="Product_List" >
+	 <div class="product" >
+	   
+		 <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=1600"   >
+		 
+		 <div class="p-details" >
+		 <h2>
+		 apple
+		 </h2>
+		 <h3>
+		 25 Ruppes
+		 </h3>
+		 
+		 </div>
+	 
+	 </div>
+	  <div class="product" >
+	   
+		 <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=1600"   >
+		 
+		 <div class="p-details" >
+		 <h2>
+		 banana
+		 </h2>
+		 <h3>
+		 25 Ruppes
+		 </h3>
+		 
+		 </div>
+	 
+	 </div>
+	  <div class="product" >
+	   
+		 <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=1600"   >
+		 
+		 <div class="p-details" >
+		 <h2>
+		 citrus
+		 </h2>
+		 <h3>
+		 25 Ruppes
+		 </h3>
+		 
+		 </div>
+	 
+	 </div>
+	  <div class="product" >
+	   
+		 <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=1600"   >
+		 
+		 <div class="p-details" >
+		 <h2>
+		 drumstick
+		 </h2>
+		 <h3>
+		 25 Ruppes
+		 </h3>
+		 
+		 </div>
+	 
+	 </div>
+	  <div class="product" >
+	   
+		 <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=1600"   >
+		 
+		 <div class="p-details" >
+		 <h2>
+		 Elephant
+		 </h2>
+		 <h3>
+		 25 Ruppes
+		 </h3>
+		 
+		 </div>
+	 
+	 </div>
+	  <div class="product" >
+	   
+		 <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=1600"   >
+		 
+		 <div class="p-details" >
+		 <h2>
+		 fiori
+		 </h2>
+		 <h3>
+		 25 Ruppes
+		 </h3>
+		 
+		 </div>
+	 
+	 </div>
+	  <div class="product" >
+	   
+		 <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=1600"   >
+		 
+		 <div class="p-details" >
+		 <h2>
+		 grogehous
+		 </h2>
+		 <h3>
+		 25 Ruppes
+		 </h3>
+		 
+		 </div>
+	 
+	 </div>
+	  <div class="product" >
+	   
+		 <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=1600"   >
+		 
+		 <div class="p-details" >
+		 <h2>
+		 Electronics
+		 </h2>
+		 <h3>
+		 25 Ruppes
+		 </h3>
+		 
+		 </div>
+	 
+	 </div>
+	  <div class="product" >
+	   
+		 <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=1600"   >
+		 
+		 <div class="p-details" >
+		 <h2>
+		 Electronics
+		 </h2>
+		 <h3>
+		 25 Ruppes
+		 </h3>
+		 
+		 </div>
+	 
+	 </div>
+	  <div class="product" >
+	   
+		 <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=1600"   >
+		 
+		 <div class="p-details" >
+		 <h2>
+		 Electronics
+		 </h2>
+		 <h3>
+		 25 Ruppes
+		 </h3>
+		 
+		 </div>
+	 
+	 </div>
+	
+	</div>
+	
+</section>
+
+
+<script>
+
+
+
+function search12(){
+
+const searchbox = document.getElementById("search").value.toUpperCase();
+
+const storeList = document.getElementById("Product_List")
+
+
+const product = document.querySelectorAll('.product')
+
+const pname = document.getElementsByTagName('h2') 
+
+
+
+for(var i=0;i<pname.length; i++)
+{
+ 
+  let match = product[i].getElementsByTagName('h2')[0]
+	
+	
+	
+	
+	if(match)
+	{
+	
+	let text = match.textContent||match.innerHTML;
+	
+      if(	text.toUpperCase().indexOf(searchbox)>-1)
+	{
+	   product[i].style.display= " ";
+	}
+	else{
+	 product[i].style.display="none";
+	}
+	
+	}
+ 
+
+}
+
+
+}
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<html>
+<head><title>Login page</title></head>
+
+
+<style>
+
+.form{
+	width:380px;
+	height:400px;
+	border-radius:15px;
+	background-color:aliceblue;
+}
+form{
+	display:grid;
+	row-gap:5px;
+}
+input{
+	padding:10px;
+	border:aliceblue;
+	width:300px;
+	margin:10px;
+	outline:none;
+		border-radius:10px;
+}
+button{
+	padding:10px;
+	border:aliceblue;
+	width:320px;
+	margin:10px;
+	background-color:aliceblue;
+	border:1px solid black;
+	border-radius:10px;
+}
+label{
+	margin-left:10px;
+}
+button:hover{
+	background-color:white;
+	border:1px solid black;
+}
+.res_container{
+	color:green;
+	font-size:30px;
+	text-align:center;
+	margin-top:10px;
+	
+}
+
+
+</style>
+<body>
+
+<div class="form"  id="form">
+<form>
+<h1 align="center"  id="title" >
+User Login
+</h1>
+
+<label>User name</label>
+<input type="text"  id="user_name"  placeholder="User name" >
+<label>Passowrd</label>
+<input type="password" id="user_password" placeholder="Password" >
+
+<button type="button" id="user_click" >
+Submit 
+</button>
+
+
+</form>
+
+<div  class="res_container"  id="res_container1" >
+
+
+
+
+</div>
+</div>
+
+<script>
+
+const username = document.getElementById("user_name")
+
+const password = document.getElementById("user_password")
+
+const button1 = document.getElementById("user_click")
+
+const res1 = document.getElementById("res_container1")
+
+
+
+
+button1.addEventListener('click', validate)
+
+var data =1;
+var data1=1;
+
+function validate()
+{
+    
+		 var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+		
+	if(username.value.match(validRegex))
+	{
+	   document.getElementById('user_name').style.border=" 1px solid green"
+		 
+		 
+		 
+		  data = 2
+	  
+	}
+	else{
+	document.getElementById('user_name').style.border="2px solid red"
+	
+	data=1;
+	}
+	
+/* 	password validation */
+
+
+  if(password.value.length>5)
+	{
+	  document.getElementById('user_password').style.border=" 2px solid green"
+		
+		 data1 = 2
+	}
+	else{
+	document.getElementById('user_password').style.border=" 2px solid red"
+	
+	 data1=1;
+	}
+	
+	
+	/* final validation result */
+	
+
+	let res = data + data1;
+	
+	if(res>3)
+	{
+	 document.getElementById('form').style.border="2px solid green"
+	 document.getElementById('title').style.color="green"
+	 
+	 res1.innerText="User credentials are Valid "
+
+	}
+	if(res==3)
+	{
+	document.getElementById('form').style.border="2px solid black"
+	 document.getElementById('title').style.color="black"
+	 
+	  res1.innerText="One input is missing  "
+	}
+	if(res==2)
+	{
+	 document.getElementById('form').style.border="2px solid red";
+	  document.getElementById('title').style.color="red";
+		
+		res1.innerText="please enter valid details ";
+	}
+	
+	
+}
+
+
+</script>
+</body>
+</html>

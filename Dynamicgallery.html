@@ -1,0 +1,263 @@
+<html>
+<head>
+<title>Dynamic Gallery</title>
+</head>
+
+
+<style>
+body{
+	font-family: sans-serif;
+}
+
+.Main_container{
+	width:100%;
+	height:950px;
+	background-image:url("https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+	background-size:cover;
+	background-repeat:none;
+    
+}
+.Gallery_container{
+	width:82%;
+	height:800px;
+	border:2px solid white;
+	position:relative;
+	left:140px;
+	top:20px;
+	overflow-y:scroll;
+      backdrop-filter:blur(20px);
+      border-radius:15px;
+	scrollbar-width: none;
+}
+.Navigation_bar{
+	width:100%;
+	height:100px;
+	display:flex;
+	gap:10px;
+	justify-content:center;
+	position:relative;
+	top:50px;
+
+
+
+}
+button{
+	width:150px;
+	height:47px;
+	background-color:rgba(44, 149, 241, 0.8);
+	color:white;
+	border:1px solid white;
+	border-radius:5px ;
+      margin-left:20px;
+	cursor:pointer;
+      transition:0.5s;
+}
+button:hover{
+border:0;
+color:rgba(44, 149, 241, 0.8);
+background-color:white;
+
+width:170px;
+}
+button:active{
+color:white;
+background-color:rgba(44, 149, 241, 0.8);
+}
+
+.images_chamber{
+	display:flex;
+	flex-wrap:wrap;
+	gap:20px;
+	position:relative;
+	top:20px;
+      align-items:
+
+  justify-content:space-around;
+}
+img{
+	width:200px;
+	height:200px;
+	border-radius:5px;
+      margin-left:20px;
+    position:relative;
+    left:40px;
+}
+
+</style>
+
+<body>
+<div class="Main_container" >
+<div class="Navigation_bar" >
+
+<button type="button" onclick="getallimg()"  >ALL</button>
+
+<button type="button"  onclick="getphones()" >Moblies</button>
+
+<button type="button" onclick="getlapts()" >Laptops</button>
+
+<button type="button"   onclick="tablets1()" >Tablets</button>
+
+<button type="button"  onclick="getaccs()" >Accessories</button>
+
+</div>
+
+<div class="Gallery_container" >
+
+
+
+<div class="images_chamber"  id="images_chamber" >
+
+<img src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1600"  class="phone"  >
+<img src="https://images.pexels.com/photos/50614/pexels-photo-50614.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  class="phone"  >
+<img src="https://images.pexels.com/photos/1786433/pexels-photo-1786433.jpeg?auto=compress&cs=tinysrgb&w=1600"  class="phone"  >
+<img src="https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=1600"  class="phone"  >
+<img src="https://images.pexels.com/photos/248526/pexels-photo-248526.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  class="phone"  >
+<img src="https://images.pexels.com/photos/1229456/pexels-photo-1229456.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  class="phone"  >
+<img src="https://images.unsplash.com/photo-1575695342320-d2d2d2f9b73f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c21hcnQlMjBwaG9uZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"  class="phone"  >
+<img src="https://img.freepik.com/free-vector/realistic-phones-different-views_52683-28436.jpg?size=626&ext=jpg&ga=GA1.1.1096738876.1677149111&semt=sph"  class="phone"  >
+<img src="https://img.freepik.com/free-vector/smartphone-with-social-media-fold-icons_125540-357.jpg?size=626&ext=jpg&ga=GA1.1.1096738876.1677149111&semt=sph"  class="phone"  >
+
+<img src="https://images.pexels.com/photos/5703527/pexels-photo-5703527.jpeg?auto=compress&cs=tinysrgb&w=1600" class="laptop">
+<img src="https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1600" class="laptop">
+<img src="https://images.pexels.com/photos/303383/pexels-photo-303383.jpeg?auto=compress&cs=tinysrgb&w=1600" class="laptop">
+<img src="https://images.pexels.com/photos/69432/pexels-photo-69432.jpeg?auto=compress&cs=tinysrgb&w=1600" class="laptop">
+<img src="https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=1600" class="laptop">
+<img src="https://images.pexels.com/photos/5152679/pexels-photo-5152679.jpeg?auto=compress&cs=tinysrgb&w=1600" class="laptop">
+
+<img src="https://img.freepik.com/free-psd/laptop-psd-mockup-with-gradient-led-light_53876-138283.jpg?size=626&ext=jpg&ga=GA1.1.1096738876.1677149111&semt=ais" class="laptop">
+<img src="https://img.freepik.com/free-psd/laptop-screen-psd-mockup-gray-background_53876-116370.jpg?size=626&ext=jpg&ga=GA1.1.1096738876.1677149111&semt=ais" class="laptop">
+<img src="https://img.freepik.com/free-psd/elegant-computer-mockup_1310-736.jpg?size=626&ext=jpg&ga=GA1.1.1096738876.1677149111&semt=ais" class="laptop">
+
+<img src="https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?auto=compress&cs=tinysrgb&w=1600"  class="tablet">
+<img src="https://images.pexels.com/photos/265685/pexels-photo-265685.jpeg?auto=compress&cs=tinysrgb&w=1600"  class="tablet">
+<img src="https://images.pexels.com/photos/3785868/pexels-photo-3785868.jpeg?auto=compress&cs=tinysrgb&w=1600"  class="tablet">
+<img src="https://images.pexels.com/photos/2473167/pexels-photo-2473167.jpeg?auto=compress&cs=tinysrgb&w=1600"  class="tablet">
+<img src="https://images.pexels.com/photos/5088013/pexels-photo-5088013.jpeg?auto=compress&cs=tinysrgb&w=1600"  class="tablet">
+
+<img src="https://images.pexels.com/photos/6954220/pexels-photo-6954220.jpeg?auto=compress&cs=tinysrgb&w=1600" class="Accessories">
+<img src="https://images.pexels.com/photos/306763/pexels-photo-306763.jpeg?auto=compress&cs=tinysrgb&w=1600" class="Accessories">
+<img src="https://images.pexels.com/photos/6953876/pexels-photo-6953876.jpeg?auto=compress&cs=tinysrgb&w=1600" class="Accessories">
+<img src="https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=1600" class="Accessories">
+<img src="https://images.pexels.com/photos/3587478/pexels-photo-3587478.jpeg?auto=compress&cs=tinysrgb&w=1600" class="Accessories">
+
+
+<img src="https://img.freepik.com/free-photo/beautiful-accessory-wooden-background_1203-7652.jpg?size=626&ext=jpg&ga=GA1.1.1096738876.1677149111&semt=ais" class="Accessories">
+<img src="https://img.freepik.com/free-vector/headphones-sale-landing-page-with-photo_23-2148288153.jpg?size=626&ext=jpg&ga=GA1.1.1096738876.1677149111&semt=ais" class="Accessories">
+<img src="https://img.freepik.com/free-photo/black-wireless-earbud-with-charging-case_1268-14371.jpg?size=626&ext=jpg&ga=GA1.1.1096738876.1677149111&semt=ais" class="Accessories">
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+const getall = document.querySelectorAll('img')
+
+const phones = document.getElementsByClassName('phone')
+
+const tablets = document.getElementsByClassName('tablet')
+
+const acces= document.getElementsByClassName('Accessories')
+
+const laptops = document.getElementsByClassName('laptop')
+
+
+
+function getallimg()
+{
+  for(var i=0;i<getall.length;i++)
+	{
+	 getall[i].style.display = "block"
+	}
+  
+   
+}
+
+function getphones()
+{
+ for(var i=0;i<phones.length;i++)
+	{
+	 phones[i].style.display = "block"
+	}
+	hidetablets1();
+	hidegetaccs();
+	hidegetlapts();
+}
+
+
+function hidephones()
+{
+ for(var i=0;i<phones.length;i++)
+	{
+	 phones[i].style.display = "none"
+	}
+	
+}
+
+
+function tablets1()
+{
+ for(var i=0;i<tablets.length;i++)
+ {
+   tablets[i].style.display = "block"
+
+ }
+ hidephones();
+ hidegetaccs();
+ 	hidegetlapts();
+}
+
+
+function hidetablets1()
+{
+ for(var i=0;i<tablets.length;i++)
+ {
+   tablets[i].style.display = "none"
+ }
+}
+
+function getaccs()
+{
+ for(var i=0;i<acces.length;i++)
+	{
+	 acces[i].style.display = "block"
+	}
+	 hidephones();
+  	hidegetlapts();
+	hidetablets1();
+}
+
+function hidegetaccs()
+{
+ for(var i=0;i<acces.length;i++)
+	{
+	 acces[i].style.display = "none"
+	}
+}
+
+function getlapts()
+{
+ for(var i=0;i<laptops.length;i++)
+	{
+	 laptops[i].style.display = "block"
+	}
+	 hidephones();
+   hidegetaccs();
+	hidetablets1();
+}
+
+function hidegetlapts()
+{
+ for(var i=0;i<laptops.length;i++)
+	{
+	 laptops[i].style.display = "none"
+	}
+}
+
+</script>
+</body>
+</html>

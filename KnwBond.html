@@ -1,0 +1,212 @@
+<html>
+<head>
+<title>Bonding predicator</title>
+</head>
+<style>
+.Main_container{
+	width:100%;
+	height:800px;
+	background-color:azure;
+	border:1px solid black;
+	border-radius:25px;
+	padding:25px;
+}
+h1{
+	text-align:center;
+}
+h1::first-letter{
+	font-size:55px;
+	color:red;
+}
+.input_container{
+	width:420px;
+	height:480px;
+		border:1px solid black;
+		position:relative;
+		left:670px;
+		top:20px;
+		background-color:white;
+		border-radius:25px;
+}
+form{
+	display:flex;
+	flex-direction:column;
+	row-gap:15px;
+	
+}
+input{
+	width:350px;
+	height:40px;
+	position:relative;
+	left:25px;
+	padding:5px;
+		border-radius:10px;
+		outline:none;
+		border-color:white;
+}
+button{
+		width:350px;
+	height:40px;
+		position:relative;
+	left:25px;
+	background-color:blue;
+	color:white;
+	border-radius:20px;
+}
+label{
+		position:relative;
+	left:25px;
+}
+h2{
+	text-align:center;
+}
+h2::first-letter{
+	
+	font-size:45px;
+	color:red;
+}
+.result_container{
+	width:400px;
+	height:60px;
+	margin:10px;
+	border:1px solid black;
+	border-radius:10px;
+}
+p{
+	position:relative;
+	bottom:10px;
+	left:10px;
+}
+input:focus{
+	border:3px solid green;
+}
+
+</style>
+
+<body>
+<div class="Main_container" >
+<h1>
+Know the Bond ,just in Secs
+</h1>
+<div class="input_container">
+<form>
+
+
+<h2>
+Enter the Below Details
+</h2>
+<label>Enter the Username 1</label>
+<input type="text" placeholder="Enter the Username 1" id="usname1">
+<label>Enter the Username 2</label>
+<input type="text" placeholder="Enter the Username 2" id="usname2">
+<button type="button"  id="Submit">
+Submit
+</button>
+<button type="button"  id="reset">
+Reset
+</button>
+</form>
+<div  id="result_container" class="result_container"  >
+<p id="res1" >
+
+</p>
+<p id="res2" >
+
+</p>
+</div>
+</div>
+
+</div>
+
+
+<script>
+const us1 = document.getElementById("usname1")
+const us2 = document.getElementById("usname2")
+const sub = document.getElementById("Submit")
+const res = document.getElementById("reset")
+
+const r1 = document.getElementById("res1")
+
+const r2 = document.getElementById("res2")
+
+var c =0;
+
+
+sub.addEventListener("click",sub1 )
+
+res.addEventListener("click",ress )
+
+function sub1()
+{
+
+if(us1.value==""&&us2.value==""||us1.value==us2.value)
+{
+   alert("please enter the details ")
+}
+else{
+
+for(i=0;i<=us1.value.length-1;i++)
+{
+  str = us1.value.charAt(i)
+	
+	if(us2.value.match(str))
+	{
+	  c=c+1;
+	}
+}
+
+ 
+ let random1 = Math.floor(Math.random()*100);
+ 
+ console.log(random1)
+ console.log(c)
+ 
+ let fres = random1+ c*10;
+ 
+ let f=fres;
+ 
+ console.log(fres)
+ 
+ if(fres>0&&fres<=30)
+ {
+  r1.innerText="Poor Bonding"
+ }
+ if(fres>30&&fres<=50)
+ {
+ r1.innerText="Average  Bonding"
+ }
+  if(fres>50&&fres<=70)
+ {
+ r1.innerText="Good  Bonding"
+ }
+  if(fres>70&&fres<=100)
+ {
+ r1.innerText="Perfect  Bonding"
+ }
+ 
+ if(f>100)
+ {
+ r2.innerText="The percentage is :"+95+"%";
+ }
+else
+ r2.innerText="The percentage is :"+f+"%"; 
+
+
+ c=0
+ }
+}
+
+function ress()
+{
+
+ us1.value=""
+ us2.value=""
+
+r1.innerText=""
+r2.innerText=""
+
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<html>
+
+<head>
+<title>
+	
+	Student Log Details
+</title>
+</head>
+
+<style>
+
+
+.form_container
+{
+	 width:550px;
+	 height:650px;
+	 border:1px solid black;
+	 background-image:url("https://images.unsplash.com/photo-1515825838458-f2a94b20105a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZGFyayUyMGNvbG9yfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+	 border-radius:10px;
+}
+form{
+	display:grid;
+	row-gap:10px;
+}
+input{
+	width:450px;
+	padding:7px;
+	margin-left:15px;
+		border-radius:10px;
+		border : 1px solid black;
+		outline:none
+		
+}
+label{
+	margin-left:15px;
+	color:white;
+	
+}
+button{
+	width:450px;
+	padding:7px;
+	margin-left:15px;
+	background-color:blue;
+	color:white;
+	border-radius:10px;
+	border-color:blue;
+	cursor:pointer;
+	margin-top:5px;
+}
+
+table , td{
+	 border:1px solid red;
+}
+.mytable_content{
+	 margin-top:25px;
+}
+
+h1{
+	color:white;
+}
+
+button:hover{
+	background-color:#415de8;
+	transition:0.5s;
+          border-color:#415de8;
+}
+</style>
+
+<body>
+
+<div  class="main_container" >
+
+<div  class="form_container"   id="fom1" >
+
+<form  >
+<h1 align="center" >
+Enter Student Details
+</h1>
+<label>First name</label>
+<input type="text"  id="fname" placeholder="Firstname">
+<label>Last name </label>
+<input type="text"  id="Lname" placeholder="Lastname">
+<label>Date of Birth </label>
+<input type="date"  id="DOb" placeholder="Date of Birth">
+<label>Moblie Number </label>
+<input type="number"  id="pnum" placeholder="Moblie Number">
+<label>Alternate Moblie number </label>
+<input type="number"  id="anum" placeholder="Alternate Number">
+<label>Email id </label>
+<input type="email"  id="email" placeholder="Email id ">
+
+<button type="button"  id="submit" >
+Submit
+</button>
+<button type="button"  id="reset" >
+reset
+</button>
+
+</form>
+
+</div>
+
+<div  class="mytable_content" id="table12">
+
+<table border=4  id="table" >
+
+<tr>
+	<th>First name</th>
+	<th>Last name</th>
+	<th>Date of Birth</th>
+	<th>Moblie Number</th>
+	<th>Alternate Moblie Number</th>
+	<th>Email id </th>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<script>
+
+const first_name = document.getElementById("fname")
+
+const Last_name = document.getElementById("Lname")
+
+const dateofBirth = document.getElementById("DOb")
+
+const ContactNumber = document.getElementById("pnum")
+
+const Altnum = document.getElementById("anum")
+
+const Email = document.getElementById("email")
+
+const Submit_det = document.getElementById("submit")
+
+const Reset_det = document.querySelectorAll("input")
+
+const ress = document.getElementById("reset")
+
+
+Submit_det.addEventListener('click',SUbmit)
+
+ress.addEventListener('click', reset)
+
+
+function SUbmit()
+
+ {
+
+   var a =1;
+
+ var a1=1;
+
+var a2=1;
+
+var a3=1;
+
+var a4=1;
+
+var a5=1;
+
+
+    var letters = /^[A-Za-z]+$/;
+
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+
+ 
+ if(first_name.value.match(letters))
+ {
+  document.getElementById("fname").style.border="2px solid green"
+   a=2
+ }
+ else
+ {
+  document.getElementById("fname").style.border="2px solid red"
+ 
+ a=1
+ }
+ 
+/*  last name validation  */
+  
+	if(first_name.value.match(Last_name.value))
+ {
+  document.getElementById("Lname").style.border="2px solid red"
+
+ a1=1
+ }
+ else
+ {
+   if(Last_name.value.match(letters))
+{
+  document.getElementById("Lname").style.border="2px solid green"
+a1=2
+}
+ }
+
+
+
+ if(isNaN(dateofBirth.value))
+ {
+   document.getElementById("DOb").style.border="2px solid green"
+   a2=2
+ }
+ else
+{
+  document.getElementById("DOb").style.border="2px solid red"
+   a2=1
+}
+ if(ContactNumber.value.length==10)
+ {
+  document.getElementById("pnum").style.border="2px solid green"
+
+a3=2
+ }
+ else
+ {
+  document.getElementById("pnum").style.border="2px solid red"
+a3=1
+ }
+ 
+ if(Altnum.value!=ContactNumber.value)
+ {
+  document.getElementById("anum").style.border="2px solid green"
+a4=2
+ }
+ else{
+  document.getElementById("anum").style.border="2px solid red"
+a4=1
+ }
+ 
+ if(Email.value.match(validRegex))
+ {
+   document.getElementById("email").style.border="2px solid green"
+a5=2
+ }
+ else{
+  document.getElementById("email").style.border="2px solid red"
+a5=1
+ }
+ 
+ let res = a+a1+a2+a3+a4+a5;
+
+if(res==12)
+{
+   document.getElementById("fom1").style.border="2px solid green"
+
+ 
+}
+ 
+if(res<=11)
+{
+   document.getElementById("fom1").style.border="2px solid blue"
+}
+if(res==6)
+{
+   document.getElementById("fom1").style.border="2px solid red"
+}
+let table1 = document.getElementById('table')
+
+
+function tablefun() {
+
+let row = table1.insertRow(-1)
+
+let c1 = row.insertCell(0)
+	
+let c2 = row.insertCell(1)
+		
+let c3 = row.insertCell(2) 
+
+let c4 = row.insertCell(3) 
+
+let c5 = row.insertCell(4) 
+
+let c6 = row.insertCell(5) 
+
+
+
+c1.innerText=first_name.value;
+
+c2.innerText=Last_name.value;
+
+c3.innerText=dateofBirth.value;
+
+c4.innerText=ContactNumber.value;
+
+c5.innerText=Altnum.value;
+
+c6.innerText=Email.value;
+
+
+
+}
+
+let v =res;
+
+if(res==12)
+{
+ tablefun();
+}
+
+}
+
+
+function reset()
+{
+   first_name.value=""
+	 Last_name.value=""
+	 dateofBirth.value=" "
+	 ContactNumber.value=" "
+	 Altnum.value=""
+  Email.value=""
+
+}
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
